@@ -6,8 +6,9 @@
 #WORKDIR /opt/tomcat
 #ADD apache-tomcat-9.0.78.tar.gz .
 FROM tomcat:9.0.78-jdk11
+RUN ["cp", "-R", "webapps.dist/*", "webapps/"]
 COPY tomcat-resources/tomcat-users.xml /usr/local/tomcat/conf/
-#COPY tomcat-resources/context.xml /opt/tomcat/apache-tomcat-9.0.78/webapps/manager/META-INF/
-COPY target/EmployeeManagement.war /usr/local/tomcat/webapps/
+COPY tomcat-resources/context.xml /usr/local/tomcat/webapps/manager/META-INF/
+COPY SampleWebApp.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
