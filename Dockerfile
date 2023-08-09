@@ -6,7 +6,7 @@
 #WORKDIR /opt/tomcat
 #ADD apache-tomcat-9.0.78.tar.gz .
 FROM tomcat:9.0.78-jdk11
-RUN ["cp", "-R", "webapps.dist/*", "webapps/"]
+RUN ["cp", "-R", "/usr/local/tomcat/webapps.dist/*", "/usr/local/tomcat/webapps/"]
 COPY tomcat-resources/tomcat-users.xml /usr/local/tomcat/conf/
 COPY tomcat-resources/context.xml /usr/local/tomcat/webapps/manager/META-INF/
 COPY SampleWebApp.war /usr/local/tomcat/webapps/
