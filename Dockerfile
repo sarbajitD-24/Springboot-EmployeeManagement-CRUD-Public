@@ -10,4 +10,4 @@ COPY tomcat-resources/tomcat-users.xml /usr/local/tomcat/conf/
 #COPY tomcat-resources/context.xml /opt/tomcat/apache-tomcat-9.0.78/webapps/manager/META-INF/
 COPY target/EmployeeManagement.war /usr/local/tomcat/webapps/
 EXPOSE 8080
-CMD ["/opt/tomcat/apache-tomcat-9.0.78/bin/catalina.sh", "run"]
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
