@@ -1,4 +1,4 @@
-FROM tomcat:9.0.78-jdk11
+FROM tomcat:9.0.78-jdk17
 RUN ["cp", "-R", "/usr/local/tomcat/webapps.dist/docs", "/usr/local/tomcat/webapps/"]
 RUN ["cp", "-R", "/usr/local/tomcat/webapps.dist/examples", "/usr/local/tomcat/webapps/"]
 RUN ["cp", "-R", "/usr/local/tomcat/webapps.dist/host-manager", "/usr/local/tomcat/webapps/"]
